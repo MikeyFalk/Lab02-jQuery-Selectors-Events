@@ -20,6 +20,30 @@
     + Finish time: 5:23 pm
     + Actual time needed to complete: .5 hours
 
+    + Number and name of feature: feature lab 3 number 1 pagination
+    + Estimate of time needed to complete: hour 1
+    + Start time: 2:15 pm
+    + Finish time: 3:18 pm
+    + Actual time needed to complete: 1 hour
+
+    + Number and name of feature: feature lab 3 number 2 templating
+    + Estimate of time needed to complete: hour 1
+    + Start time:  pm
+    + Finish time:  pm
+    + Actual time needed to complete: 
+
+    + Number and name of feature: feature lab 3 number 3 styling with flexbox
+    + Estimate of time needed to complete: hour 1
+    + Start time:  pm
+    + Finish time:  pm
+    + Actual time needed to complete: 
+    
+    + Number and name of feature: feature lab 3 number 4 Sort the images
+    + Estimate of time needed to complete: hour 1
+    + Start time:  pm
+    + Finish time:  pm
+    + Actual time needed to complete: 
+
 
 
 + About
