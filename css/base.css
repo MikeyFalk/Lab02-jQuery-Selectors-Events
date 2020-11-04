@@ -1,0 +1,32 @@
+*{
+    font-family: 'Turret Road', cursive;
+    background-color: rgb(121, 162, 163);
+   
+    /* height: auto; */
+}
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+  
+  div {
+    float: right;
+     /* width: 100px; */
+     width: 402px;   
+     height: 500px;               
+    
+    
+  }
+
+  img{
+width: 300px;
+height: auto;
+border: solid 2px black;
+padding: 5px;
+clear: both;
+
+  }
+  /* body{width: 960px;
+    height: 960px;
+} */
