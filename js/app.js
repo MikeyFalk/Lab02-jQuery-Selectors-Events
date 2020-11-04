@@ -5,6 +5,7 @@
 // use removeClass to hide images after selection
 
 //let userSelection = ()
+let pageInfo;
 
 function Horn(horn) {
   this.title = horn.title;
@@ -29,6 +30,19 @@ $('select').on('change', function(){
   }
 })
 
+$('button').on('click',function(){
+  console.log(this.id);
+  let buttonSelection = this.id;
+  console.log('this is what user selected', buttonSelection);
+  if (buttonSelection === 'pageone'){
+    pageInfo = 'data/page-1.json'
+    $(() => Horn.readJson());
+  }
+  else if (buttonSelection === 'pagetwo') {
+    pageInfo = 'data/page-2.json'
+    $(() => Horn.readJson());
+  }
+})
 
 // we need to pass userSelection value to the render function
 
@@ -48,8 +62,9 @@ Horn.prototype.render = function () {
 }//);
 
 Horn.readJson = () => {
+  console.log(pageInfo);
   const ajaxSettings = { method: 'get', dataType: 'json' };
-  $.ajax('data/page-1.json', ajaxSettings)
+  $.ajax( pageInfo, ajaxSettings)
     .then(data => {
       console.log('our array of horns', data);
       data.forEach(item => {
