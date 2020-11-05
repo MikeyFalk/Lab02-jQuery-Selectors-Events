@@ -6,12 +6,14 @@
 
 //let userSelection = ()
 let pageInfo;
+let hornArray = [];
 
 function Horn(horn) {
   this.title = horn.title;
   this.image_url = horn.image_url;
   this.keyword = horn.keyword;
   this.horns = horn.horns;
+  this.description = horn.description;
 
 }
 
@@ -19,22 +21,22 @@ function Horn(horn) {
 // We need to listen for a change in the drop down menu- done
 
 // we need to determine the value the user selected on the page- done
-$('select').on('change', function(){
+$('select').on('change', function () {
   let userSelection = $(this).find(':selected').attr('value');
-  console.log('this is what the user picked:',userSelection );
-  if (userSelection === 'default'){
+  console.log('this is what the user picked:', userSelection);
+  if (userSelection === 'default') {
     $('.hornanimal').show();
-  }else{
+  } else {
     $('.hornanimal').hide();
     $(`.${userSelection}`).show();
   }
 })
 
-$('button').on('click',function(){
+$('button').on('click', function () {
   console.log(this.id);
   let buttonSelection = this.id;
   console.log('this is what user selected', buttonSelection);
-  if (buttonSelection === 'pageone'){
+  if (buttonSelection === 'pageone') {
     pageInfo = 'data/page-1.json'
     $(() => Horn.readJson());
   }
@@ -44,36 +46,39 @@ $('button').on('click',function(){
   }
 })
 
-// we need to pass userSelection value to the render function
-
-
-
-// creating an array of objects
-
-Horn.prototype.render = function () {
-  // using jquery to create a div element on the page
-  let $hornClone = $(`<div class = "hornanimal ${this.keyword}"></div>`);
-  $hornClone.html($('#photo-template').html());
-  $hornClone.find('h2').text(this.title);
-  $hornClone.find('img').attr('src', this.image_url);
-
-  console.log($hornClone);
-  $('main').append($hornClone);
-}//);
 
 Horn.readJson = () => {
-  console.log(pageInfo);
   const ajaxSettings = { method: 'get', dataType: 'json' };
-  $.ajax( pageInfo, ajaxSettings)
+  $.ajax(pageInfo, ajaxSettings)
     .then(data => {
       console.log('our array of horns', data);
+
+      hornArray = []
+      $('section').empty();
+      // data.forEach(item => {
+      //   let horn = new Horn(item);
+      //   //if (userSelection === horn.keyword);
+      Horn.prototype.toHtml = function () {
+        let template = $('#photo-template').html();
+        let html = Mustache.render(template, this);
+        return html;
+      }
+
+
       data.forEach(item => {
-        let horn = new Horn(item);
-        //if (userSelection === horn.keyword);
-        horn.render();
+        hornArray.push(new Horn(item));
       })
+
+      hornArray.forEach(item => {
+        $('#gallery').append(item.toHtml());
+      })
+
+
+
+      //horn.render();
+      // })
     })
+
 }
 
-
-$(() => Horn.readJson());
+// $(() => Horn.readJson());

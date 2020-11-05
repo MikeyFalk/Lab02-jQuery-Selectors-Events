@@ -28,9 +28,9 @@
 
     + Number and name of feature: feature lab 3 number 2 templating
     + Estimate of time needed to complete: hour 1
-    + Start time:  pm
-    + Finish time:  pm
-    + Actual time needed to complete: 
+    + Start time: 3:30 pm
+    + Finish time: 5:26 pm
+    + Actual time needed to complete: 2 hours
 
     + Number and name of feature: feature lab 3 number 3 styling with flexbox
     + Estimate of time needed to complete: hour 1
