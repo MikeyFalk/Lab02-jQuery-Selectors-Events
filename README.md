@@ -41,14 +41,16 @@
     + Number and name of feature: feature lab 3 number 4 Sort the images
     + Estimate of time needed to complete: hour 1
     + Start time: 7:47 pm
-    + Finish time:  pm
-    + Actual time needed to complete: 
+    + Finish time:  9:05 pm
+    + Actual time needed to complete: 1.5ish hours
 
 
 
 + About
 
-+ Author
++ Author:
+
++ Michael Falk and Stacy Burris 
 
 + License 
 
