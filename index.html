@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="css/modules.css">
     <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap" rel="stylesheet">
     <div id="photoscss">
-    <template id="photo-template" type="text/x-tmpl-mustache">
-        <div id="items">
-            <h2>{{title}}</h2>
-            <img src="{{image_url}}" alt="">
-            <p>{{description}}</p>
-        </div>
+        <template id="photo-template" type="text/x-tmpl-mustache">
+            <div id="items">
+                <h2>{{title}}</h2>
+                <img src="{{image_url}}" alt="">
+                <p>{{description}}</p>
+            </div>
     </div>
     </template>
 </head>
@@ -40,8 +40,12 @@
     </header>
     <main>
         <form action="">
-            <button type="button" id="pageone">Page 1</button>
-            <button type="button" id="pagetwo">Page 2</button>
+            <button class="whichpage" type="button" id="pageone">Page 1</button>
+            <button class="whichpage" type="button" id="pagetwo">Page 2</button>
+        </form>
+        <form action="">
+            <button class="hornsort" type="button" id="sortnumberofhorn">Sort</button>
+
         </form>
         <section id="gallery">
 

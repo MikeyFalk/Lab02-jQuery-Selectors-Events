@@ -23,7 +23,7 @@ function Horn(horn) {
 // we need to determine the value the user selected on the page- done
 $('select').on('change', function () {
   let userSelection = $(this).find(':selected').attr('value');
-  console.log('this is what the user picked:', userSelection);
+  //console.log('this is what the user picked:', userSelection);
   if (userSelection === 'default') {
     $('.hornanimal').show();
   } else {
@@ -32,10 +32,10 @@ $('select').on('change', function () {
   }
 })
 
-$('button').on('click', function () {
+$('.whichpage').on('click', function () {
   console.log(this.id);
   let buttonSelection = this.id;
-  console.log('this is what user selected', buttonSelection);
+  //console.log('this is what user selected', buttonSelection);
   if (buttonSelection === 'pageone') {
     pageInfo = 'data/page-1.json'
     $(() => Horn.readJson());
@@ -46,12 +46,41 @@ $('button').on('click', function () {
   }
 })
 
+$('.hornsort').on('click', function () {
+  hornArray.sort(function (a, b) {
+
+    let hornA = a.horns;
+    let hornB = b.horns;
+    if (hornA < hornB) {
+      return - 1;
+
+    }
+    if (hornA > hornB) {
+      return 1;
+    }
+    return 0;
+
+  });
+
+  $('section').empty();
+  hornArray.forEach(item => {
+    $('#gallery').append(item.toHtml());
+  })
+
+  console.log('this is our new horn array', hornArray);
+  // console.log('this is hornA', hornA);
+})
+
+
+// let sortButtonSelect = this.id;
+
+
 
 Horn.readJson = () => {
   const ajaxSettings = { method: 'get', dataType: 'json' };
   $.ajax(pageInfo, ajaxSettings)
     .then(data => {
-      console.log('our array of horns', data);
+      //console.log('our array of horns', data);
 
       hornArray = []
       $('section').empty();
