@@ -34,7 +34,7 @@
 
     + Number and name of feature: feature lab 3 number 3 styling with flexbox
     + Estimate of time needed to complete: hour 1
-    + Start time:  pm
+    + Start time: 5:50 pm
     + Finish time:  pm
     + Actual time needed to complete: 
     
